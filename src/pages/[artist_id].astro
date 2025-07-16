@@ -40,6 +40,13 @@ const nextArtistIndex = (currentArtistIndex + 1) % artists.length;
 // Get the "next" artist based on the calculated index
 const nextArtist = artists[nextArtistIndex];
 
+// Calculate the index of the "previous" artist in the array (wrap around if at the first artist)
+const previousArtistIndex =
+  (currentArtistIndex - 1 + artists.length) % artists.length;
+
+// Get the "previous" artist based on the calculated index
+const previousArtist = artists[previousArtistIndex];
+
 // Fetch all albums that belong to the current artist
 const albums = await getCollection(
   "albums",
@@ -60,7 +67,10 @@ const { Content } = await render(artist);
       <div>
         <a class="back" href="/">View all</a>
         <span class="faded">/</span>
-        <a href={`/${nextArtist.id}`}>Next artist</a>
+        <span class="faded">/</span>
+        <a href={`/${previousArtist.id}`}>Back</a>
+        <span class="faded">/</span>
+        <a href={`/${nextArtist.id}`}>Next</a>
       </div>
     </header>
     <Separator />
@@ -71,7 +81,7 @@ const { Content } = await render(artist);
         alt={artist.data.image.alt}
       />
       <div class="content">
-        <h3>Biography</h3>
+        <h3>Summary</h3>
         <Content />
         <dl>
           <dt>Genre</dt><dd>{artist.data.genre}</dd>

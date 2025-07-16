@@ -47,7 +47,7 @@ h2 {
 
 h3 {
   font-size: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 p+h3 {
@@ -189,10 +189,23 @@ img {
   }
 }
 
+.content table {
+  border: 1px solid red;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.content table, th, td {
+  border: 1px solid;
+}
+
+.content th, td {
+  padding: 1rem;
+}
+
 .content p,
 .content ol {
   line-height: 1.4;
-  font-weight: 500;
 }
 
 .content ol {
@@ -237,9 +250,4 @@ dd {
 
 .title-header--initial {
   font-size: var(--font-size-l);
-
-  @media screen and (min-width: 50em) {
-    grid-template-columns: 20vw 1fr auto;
-    gap: 1rem;
-  }
 }

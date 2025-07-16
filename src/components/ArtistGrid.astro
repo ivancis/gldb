@@ -10,10 +10,35 @@ type Props = {
 const { artists } = Astro.props;
 const grid = "artists";
 ---
+<h3>What I do</h3>
+
+<ul class="services-grid">
+  <li>
+    <h3>Translation, Localization, Transcreation, Editing, Proofreading and LQA.</h3>
+    <p>I can offer my expertise to effectively help your games reach the Spanish-speaking community and expand into new markets.</p>
+  </li>
+  <li>
+    <h3>PC, Consoles &amp; Mobile</h3>
+    <p>I've translated over 1 million words across all available platforms, which has allowed me to master their specific terminology.</p>
+  </li>
+  <li>
+    <h3>Gamer Vision</h3>
+    <p>Gamers don't tolerate mediocrity and know how to appreciate quality. A well-designed game must understand its audience and meet cultural and linguistic expectations. I can provide the much-needed gamer input for a successful localization.</p>
+  </li>
+  <li>
+    <h3>Glossary Creation</h3>
+    <p>I can create a glossary or termbase from scratch to make the localization of your game increasingly streamlined and error-free.</p>
+  </li>
+  <li>
+    <h3>CATs</h3>
+    <p>MemoQ, Memsource (Phrase), SmartCat, and many more.</p>
+  </li>
+</ul>
 
 <section class="artist-grid" id="grid" data-grid={grid}>
   {artists.map((artist) => <ArtistCard artist={artist} />)}
 </section>
+
 
 <Tooltip grid={grid} />
 
@@ -23,14 +48,17 @@ const grid = "artists";
     overflow: hidden;
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(2, calc(100% / 2));
-    margin: 1rem 0 10rem;
-    min-height: 400px;
+    grid-template-columns: repeat(2, calc(100% / 1));
     @media screen and (min-width: 30em) {
-      grid-template-columns: repeat(4, calc(100% / 4));
+      grid-template-columns: repeat(4, calc(100% / 3));
     }
     @media screen and (min-width: 50em) {
-      grid-template-columns: repeat(7, calc(100% / 7));
+      grid-template-columns: repeat(7, calc(100% / 4));
     }
+  }
+  .services-grid {
+    border: 1px dashed orange;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 </style>

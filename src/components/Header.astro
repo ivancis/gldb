@@ -7,9 +7,9 @@ const currentPath = Astro.url.pathname;
 // Define a map of routes
 const routes = {
   "/": "Home",
-  "/releases/": "Releases",
-  "/store/": "Store",
-  "/history/": "History",
+  // "/releases/": "Releases",
+  // "/store/": "Store",
+  // "/history/": "History",
   "/contact/": "Contact",
 };
 // Determine the active route
@@ -19,34 +19,34 @@ const activeRoute = routes[currentPath] || null;
 <header>
   <h1>
     <a href="/" class={activeRoute === "Home" ? "current" : ""}
-      ><TextSlider content="Players Club" /></a>
+      ><h1><TextSlider content="Hola, I'm Gonzalo" /></h1></a>
   </h1>
-  <span><TextSlider content="Record Label" /></span>
+  <!-- <span><TextSlider content="Gameloc Specialist" /></span> -->
   <ul>
-    <li>
+    <!-- <li>
       <a
         href="/releases/"
         class={activeRoute === "Releases" ? "current" : ""}
         data-astro-prefetch><TextSlider content="Releases" /></a>
-    </li>
-    <li>
+    </li> -->
+    <!-- <li>
       <a
         href="/history/"
-        class={activeRoute === "History" ? "current" : ""}
-        data-astro-prefetch><TextSlider content="History" /></a>
-    </li>
-    <li>
+        class={activeRoute === "About me" ? "current" : ""}
+        data-astro-prefetch><TextSlider content="About me" /></a>
+    </li> -->
+    <!-- <li>
       <a
         href="/store/"
         class={activeRoute === "Store" ? "current" : ""}
         data-astro-prefetch><TextSlider content="Store" /></a>
-    </li>
-    <li>
+    </li> -->
+    <!-- <li>
       <a
         href="/contact/"
         class={activeRoute === "Contact" ? "current" : ""}
         data-astro-prefetch><TextSlider content="Contact" /></a>
-    </li>
+    </li> -->
   </ul>
 </header>
 <Separator />
@@ -54,8 +54,7 @@ const activeRoute = routes[currentPath] || null;
 <style>
   header {
     position: relative;
-    display: grid;
-    grid-template-columns: min-content auto;
+    display: flex;
     font-weight: 700;
     padding: 1rem 0;
     gap: 1rem;
@@ -64,7 +63,6 @@ const activeRoute = routes[currentPath] || null;
     pointer-events: none;
   }
   h1 {
-    font-size: 1rem;
     font-weight: inherit;
     margin: 0;
   }
@@ -75,10 +73,5 @@ const activeRoute = routes[currentPath] || null;
     margin: 0;
     padding: 0;
     grid-column: auto / span 2;
-  }
-  @media screen and (min-width: 50em) {
-    header {
-      grid-template-columns: 20vw 1fr auto auto;
-    }
   }
 </style>
