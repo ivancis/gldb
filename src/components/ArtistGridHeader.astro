@@ -12,7 +12,35 @@ const { artistsTotal } = Astro.props;
 ---
 
 <header class="title-header title-header--initial">
-  <h2><TextSlider content="I'm a English into Spanish translator specialized in Game Localization" /></h2>
+  <!-- <h2><TextSlider content="I'm a English into Spanish translator specialized in Game Localization" /></h2> -->
+  <span>
+    <h2>I'm a English into Spanish translator specialized in Game Localization</h2>
+    <h3>Translation, Localization, Transcreation, Editing, Proofreading and LQA.</h3>
+    <p>I can offer my expertise to effectively help your games reach the Spanish-speaking community and expand into new markets.</p>
+  </span>
+
+  <ul class="services-grid">
+    <li>
+      <h3>PC, Consoles &amp; Mobile</h3>
+      <p>I've translated over 1 million words across all available platforms, which has allowed me to master their specific terminology.</p>
+    </li>
+    <li>
+      <h3>Gamer Vision</h3>
+      <p>Gamers don't tolerate mediocrity and know how to appreciate quality. A well-designed game must understand its audience and meet cultural and linguistic expectations. I can provide the much-needed gamer input for a successful localization.</p>
+    </li>
+    <li>
+      <h3>Glossary Creation</h3>
+      <p>I can create a glossary or termbase from scratch to make the localization of your game increasingly streamlined and error-free.</p>
+    </li>
+    <li>
+      <h3>CATs</h3>
+      <p>MemoQ, Memsource (Phrase), SmartCat, and many more.</p>
+    </li>
+    <li>
+      <h3>Adaptation</h3>
+      <p>MemoQ, Memsource (Phrase), SmartCat, and many more.</p>
+    </li>
+  </ul>
   <!--
   <div>
     <button data-sort><TextSlider content="Sort" /></button>
@@ -33,6 +61,34 @@ const { artistsTotal } = Astro.props;
 <Search />
 
 <style>
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: -1rem;
+    gap: 1rem;
+  }
+  
+  li {
+    max-width: 24%;
+    list-style-type: none;
+    padding: 1rem;
+  }
+  
+  h2 {
+    line-height: 1.1;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+
   div {
     display: flex;
     list-style: none;
