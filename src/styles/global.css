@@ -15,7 +15,7 @@
   --color-bg: #fff;
   --border-color: #ccc;
   --color-link: #000;
-  --color-link-hover: #999;
+  --color-link-hover: rgb(22, 0, 145);
   --color-placeholder: #f8f8f8;
   --font-size-s: 0.85rem;
   --font-size-l: clamp(1.25rem, 3vw, 1.75rem);
