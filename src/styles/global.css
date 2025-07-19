@@ -20,6 +20,7 @@
   --font-size-s: 0.85rem;
   --font-size-l: clamp(1.25rem, 3vw, 1.75rem);
   --font-size-xl: clamp(1.5rem, 5vw, 2.75rem);
+  --col-size-l: 900px;
 }
 
 body {
@@ -48,12 +49,11 @@ body {
 h2 {
   font-size: var(--font-size-xl);
   margin: 0;
-  line-height: 0.85;
+  line-height: 1;
 }
 
 h3 {
-  font-size: 1rem;
-  margin-bottom: 1rem;
+  font-size: var(--font-size-l);
 }
 
 p+h3 {

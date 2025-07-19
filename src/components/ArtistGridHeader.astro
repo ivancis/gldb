@@ -12,7 +12,7 @@ const { artistsTotal } = Astro.props;
 ---
 
 <header class="title-header title-header--initial">
-  <!-- <h2><TextSlider content="I'm a English into Spanish translator specialized in Game Localization" /></h2> -->
+  
   <span>
     <h2>I'm a translator specializing in game localization from English to Spanish.</h2>
     <h3>Translation, Localization, Transcreation, Editing, Proofreading and LQA.</h3>
@@ -61,33 +61,30 @@ const { artistsTotal } = Astro.props;
 <Search />
 
 <style>
+  span {
+    max-width: var(--col-size-l);
+  }
+  
   ul {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
     margin: -1rem;
-    gap: 0rem 1rem;
   }
   
   li {
     max-width: 320px;
     list-style-type: none;
-    padding: 1rem;
-  }
-  
-  h2 {
-    line-height: 1.1;
-  }
-  
-  h3 {
-    font-size: 1.25rem;
+    padding: 1rem 2rem;
+    border: 1px solid var(--border-color);
+    position: relative;
+    margin: -1px -0px 0px -1px;
   }
   
   p {
     font-size: 1rem;
     font-weight: 400;
   }
-
 
   div {
     display: flex;
