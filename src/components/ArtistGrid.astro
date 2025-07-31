@@ -63,13 +63,24 @@ const grid = "artists";
       grid-template-columns: repeat(7, calc(100% / 4));
     }
   }
-
+  
   .services-grid {
     display: flex;
     flex-wrap: wrap;
+    margin: 0;
     padding: 0;
     position: relative;
-    gap: 1rem;
+    gap: 1rem 3rem;
+    @media screen and (max-width: 1600px) {
+      justify-content: space-between;
+      background-color: orange;
+    }
+    @media screen and (max-width: 1000px) {
+      gap: 1rem;
+    }
+    @media screen and (max-width: 600px) {
+      gap: 0rem;
+    }
   }
 
   p {
