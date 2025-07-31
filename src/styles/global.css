@@ -21,15 +21,15 @@
   --font-size-s: 1.4rem;
   --font-size-l: clamp(1.25rem, 3vw, 1.75rem);
   --font-size-xl: clamp(1.5rem, 5vw, 2.75rem);
-  --col-size-m: 540px;
-  --col-size-l: 1100px;
+  --col-size-m: 500px;
+  --col-size-l: 1000px;
 }
 
 body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  padding: 0 2rem;
+  padding: 2rem;
   color: var(--color-text);
   background-color: var(--color-bg);
   line-height: 1;
@@ -51,17 +51,17 @@ body {
 }
 
 h1 {
-  letter-spacing: -0.09375rem;
+  letter-spacing: -0.01rem;
 }
 
 h2 {
   font-size: var(--font-size-xl);
   line-height: 1;
-  letter-spacing: -0.09375rem;
+  letter-spacing: -0.01rem;
 }
 
 h3 {
-  letter-spacing: -0.09375rem;
+  letter-spacing: -0.01rem;
   font-size: var(--font-size-l);
 }
 
