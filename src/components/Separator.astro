@@ -2,10 +2,19 @@
 
 <style>
   hr {
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color-active);
     border-bottom: 0;
+    border-radius: .5px;
     width: 100%;
-    margin: 0;
+    margin: 2rem 0;
     will-change: transform;
+    animation-name: separatorColor;
+    animation-fill-mode: forwards;
+    animation-duration: 5s;
   }
+
+  @keyframes separatorColor {
+    from {border-color: var(--border-color-active);}
+    to {border-color: var(--border-color);}
+}
 </style>

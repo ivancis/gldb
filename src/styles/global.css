@@ -13,8 +13,9 @@
   --color-text-alt: #6a6a6a;
   --color-faded: #c9c9c9;
   --color-bg: #fff;
-  --border-color: #ccc;
-  --color-link: #000;
+  --border-color: #000;
+  --border-color-active: #33cccc;
+  --color-link: #33cccc;
   --color-link-hover: rgb(22, 0, 145);
   --color-placeholder: #f8f8f8;
   --font-size-s: 1.4rem;
@@ -96,6 +97,10 @@ a {
       background-color: transparent;
     }
   }
+}
+
+a.current {
+  color: var(--color-text);
 }
 
 img {

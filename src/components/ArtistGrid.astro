@@ -23,23 +23,34 @@ const grid = "artists";
 
 <ul class="services-grid">
   <li>
-    <h3>PC, Consoles &amp; Mobile</h3>
+    <span>
+      <img src="/src/assets/images/game.gif" alt="">
+      <h3>PC, Consoles &amp; Mobile</h3>
+    </span>
     <p>I offer translation, localization, transcreation, editing, proofreading, and LQA services to help your games connect authentically with Spanish-speaking audiences and expand into new markets.</p>
   </li>
   <li>
-    <h3>Gamer Vision</h3>
+    <span>
+      <img src="/src/assets/images/gamer.gif" alt="">
+      <h3>Gamer Vision</h3>
+    </span>
     <p>Gamers don’t settle for mediocrity and know how to spot quality. A well-designed game understands its audience and meets cultural and linguistic expectations. I bring the gamer insight your localization needs to succeed.</p>
   </li>
   <li>
-    <h3>Glossary Creation</h3>
+    <span>
+      <img src="/src/assets/images/script.gif" alt="">
+      <h3>Glossary Creation</h3>
+    </span>
     <p>I create glossaries and termbases from scratch to streamline your game’s localization and minimize errors.</p>
   </li>
   <li>
-    <h3>Adaptation and CATs</h3>
+    <span>
+      <img src="/src/assets/images/translator.gif" alt="">
+      <h3>Adaptation and CATs</h3>
+    </span>
     <p>I work with MemoQ, Memsource (PhraseSkype SmartCat, and many more.</p>
   </li>
 </ul>
-
 
 <Tooltip grid={grid} />
 
@@ -67,7 +78,7 @@ const grid = "artists";
   .services-grid {
     display: flex;
     flex-wrap: wrap;
-    margin: 0;
+    margin: 2rem 0;
     padding: 0;
     position: relative;
     gap: 1rem 3rem;
@@ -90,5 +101,14 @@ const grid = "artists";
     width: 100%;
     max-width: var(--col-size-m);
     list-style-type: none;
+  }
+
+  span {
+    display: flex;
+    gap: 1rem;
+  }
+
+  img {
+    width: 5rem;
   }
 </style>
