@@ -13,11 +13,20 @@ const { artistsTotal } = Astro.props;
 
 <header class="title-header title-header--initial">
   
-  <span>
-    <h2>I'm a translator specializing in game localization from English to Spanish.</h2>
-    <h3>Translation, Localization, Transcreation, Editing, Proofreading and LQA.</h3>
-    <p>I offer translation, localization, transcreation, editing, proofreading, and LQA services to help your games connect authentically with Spanish-speaking audiences and expand into new markets.</p>
-  </span>
+  <section>
+    <div class="bio">
+      <h2>I'm a translator specializing in game localization from English to Spanish.</h2>
+      <p>I offer translation, localization, transcreation, editing, proofreading, and LQA services to help your games connect authentically with Spanish-speaking audiences and expand into new markets.</p>
+    </div>
+    <ul class="pills">
+      <li>Translation</li>
+      <li>Localization</li>
+      <li>Transcreation</li>
+      <li>Editing</li>
+      <li>Proofreading</li>
+      <li>LQA</li>
+    </ul>
+  </section>
 
   <ul class="services-grid">
     <li>
@@ -57,35 +66,51 @@ const { artistsTotal } = Astro.props;
 <Search />
 
 <style>
-  span {
+  section {
     display: grid;
     gap: 1rem;
     max-width: var(--col-size-l);
   }
   
-  ul {
+  .services-grid {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
     position: relative;
-    left: -2rem;
+    gap: 1rem;
+  }
+
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .pills li {
+    border: 2px solid;
+    width: auto;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
   }
   
   li {
     width: 100%;
     max-width: var(--col-size-m);
     list-style-type: none;
-    padding: 1rem 2rem;
   }
 
   div {
-    display: flex;
+    display: grid;
     list-style: none;
     align-items: center;
     gap: 1rem;
     margin: 0;
     padding: 0;
   }
+  
   div:has(> .search) {
     position: relative;
   }
