@@ -81,6 +81,7 @@ a {
 
   &:hover {
     color: var(--color-link-hover);
+    text-decoration: underline;
     outline: none;
   }
 
@@ -100,6 +101,7 @@ a {
 }
 
 a.current {
+  text-decoration: none !important;
   color: var(--color-text);
 }
 

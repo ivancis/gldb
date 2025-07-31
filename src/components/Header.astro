@@ -28,21 +28,12 @@ const activeRoute = routes[currentPath] || null;
         href="/contact/"
         class={activeRoute === "Contact" ? "current" : ""}
         data-astro-prefetch><TextSlider content="Hola!" /></a> -->
-  <ul>
-    <li>
-      <a href="/" class="discord">
-        Say "hola" on Discord
-      </a>
-    </li>
-    <li>
+  <p>
+    Say "hola" on 
+    <a href="/" class="discord">Discord</a>
       or
-    </li>
-    <li>
-      <a href="/" class="email">
-        hello@gdblocal.com
-      </a>
-    </li>
-  </ul>
+    <a href="/" class="email">send an email</a> 
+  </p>
   <!-- <span><TextSlider content="Gameloc Specialist" /></span> -->
   <!--
     <ul>
@@ -89,21 +80,17 @@ const activeRoute = routes[currentPath] || null;
     font-weight: inherit;
     margin: 0 auto 0 0;
   }
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    gap: .5rem;
-    margin: 0 0 0 auto;
+  p {
+    font-size: 1rem;
+    margin: 0;
     padding: 0;
-    grid-column: auto / span 2;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    flex-wrap: wrap;
     @media screen and (max-width: 900px) {
       margin: 0 auto 0 0;
     }
-  }
-  li {
-    display: flex;
-    align-items: center;
   }
   a {
     display: flex;
@@ -112,6 +99,7 @@ const activeRoute = routes[currentPath] || null;
     margin: auto;
   }
   .discord {
+    color: purple;
   }
   .email {
   }
