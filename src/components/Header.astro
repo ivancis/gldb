@@ -29,14 +29,18 @@ const activeRoute = routes[currentPath] || null;
         class={activeRoute === "Contact" ? "current" : ""}
         data-astro-prefetch><TextSlider content="Hola!" /></a> -->
   <ul>
-    <li><a href="/" class={activeRoute === "Home" ? "current" : ""}
-      ><h5><TextSlider content="X" /><i class="fa-brands fa-linkedin"></i></h5></a>
+    <li>
+      <a href="/" class="discord">
+        Say "hola" on Discord
+      </a>
     </li>
-    <li><a href="/" class={activeRoute === "Home" ? "current" : ""}
-      ><h5><TextSlider content="X" /><i class="fa-brands fa-discord"></i></h5></a>
+    <li>
+      /
     </li>
-    <li><a href="/" class={activeRoute === "Home" ? "current" : ""}
-      ><h5><TextSlider content="X" /><i class="fa-solid fa-envelope"></i></h5></a>
+    <li>
+      <a href="/" class="email">
+        hello@gdblocal.com
+      </a>
     </li>
   </ul>
   <!-- <span><TextSlider content="Gameloc Specialist" /></span> -->
@@ -68,7 +72,7 @@ const activeRoute = routes[currentPath] || null;
     </li> -->
   </ul>
 </header>
-<Separator />
+<!-- <Separator /> -->
 
 <style>
   header {
@@ -76,14 +80,13 @@ const activeRoute = routes[currentPath] || null;
     display: flex;
     gap: 1rem;
     font-weight: 700;
-    padding: 0 0 2rem;
   }
   header a.current {
     pointer-events: none;
   }
   h1 {
     font-weight: inherit;
-    margin: 0;
+    margin: 0 auto 0 0;
   }
   ul {
     display: flex;
@@ -92,5 +95,26 @@ const activeRoute = routes[currentPath] || null;
     margin: 0 0 0 auto;
     padding: 0;
     grid-column: auto / span 2;
+  }
+  li {
+    display: flex;
+    align-items: center;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+  .discord {
+  }
+  .email {
+  }
+  i {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    margin: auto;
   }
 </style>

@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import ArtistCard from "./ArtistCard.astro";
 import Tooltip from "./Tooltip.astro";
+import Separator from "../components/Separator.astro";
 
 type Props = {
   artists: CollectionEntry<"artists">[];
@@ -10,18 +11,41 @@ type Props = {
 const { artists } = Astro.props;
 const grid = "artists";
 ---
-<h2>Here is some of my latest work</h2>
+<p>I offer translation, localization, transcreation, editing, proofreading, and LQA services to help your games connect authentically with Spanish-speaking audiences and expand into new markets.</p>
+<h3>Recent projects</h3>
+<p>While much of my work is confidential due to non-disclosure agreements, I'm proud to showcase a few projects below where I've received credit.</p>
 
 <section class="artist-grid" id="grid" data-grid={grid}>
   {artists.map((artist) => <ArtistCard artist={artist} />)}
 </section>
 
+<Separator />
+
+<ul class="services-grid">
+  <li>
+    <h3>PC, Consoles &amp; Mobile</h3>
+    <p>I offer translation, localization, transcreation, editing, proofreading, and LQA services to help your games connect authentically with Spanish-speaking audiences and expand into new markets.</p>
+  </li>
+  <li>
+    <h3>Gamer Vision</h3>
+    <p>Gamers don’t settle for mediocrity and know how to spot quality. A well-designed game understands its audience and meets cultural and linguistic expectations. I bring the gamer insight your localization needs to succeed.</p>
+  </li>
+  <li>
+    <h3>Glossary Creation</h3>
+    <p>I create glossaries and termbases from scratch to streamline your game’s localization and minimize errors.</p>
+  </li>
+  <li>
+    <h3>Adaptation and CATs</h3>
+    <p>I work with MemoQ, Memsource (PhraseSkype SmartCat, and many more.</p>
+  </li>
+</ul>
+
 
 <Tooltip grid={grid} />
 
 <style>
-  h2 {
-    margin: 2rem 0;
+  h3 {
+    margin: 2rem 0 0;
   }
   section {
     position: relative;
@@ -38,5 +62,23 @@ const grid = "artists";
     @media screen and (min-width: 50em) {
       grid-template-columns: repeat(7, calc(100% / 4));
     }
+  }
+
+  .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    position: relative;
+    gap: 1rem;
+  }
+
+  p {
+    max-width: var(--col-size-l);
+  }
+
+  li {
+    width: 100%;
+    max-width: var(--col-size-m);
+    list-style-type: none;
   }
 </style>

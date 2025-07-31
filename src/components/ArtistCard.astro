@@ -8,8 +8,9 @@ type Props = {
 const { artist } = Astro.props;
 ---
 
+<!-- href={`/${artist.id}`} -->
 <a
-  href={`/${artist.id}`}
+  href="javascript:void(0)"
   class="artist"
   style={`--image: url('${artist.data.image.src}');`}
   data-stagename={artist.data.stage_name}

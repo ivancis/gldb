@@ -16,7 +16,6 @@ const { artistsTotal } = Astro.props;
   <section>
     <div class="bio">
       <h2>I'm a translator specializing in game localization from English to Spanish.</h2>
-      <p>I offer translation, localization, transcreation, editing, proofreading, and LQA services to help your games connect authentically with Spanish-speaking audiences and expand into new markets.</p>
     </div>
     <ul class="pills">
       <li>Translation</li>
@@ -27,25 +26,6 @@ const { artistsTotal } = Astro.props;
       <li>LQA</li>
     </ul>
   </section>
-
-  <ul class="services-grid">
-    <li>
-      <h3>PC, Consoles &amp; Mobile</h3>
-      <p>I offer translation, localization, transcreation, editing, proofreading, and LQA services to help your games connect authentically with Spanish-speaking audiences and expand into new markets.</p>
-    </li>
-    <li>
-      <h3>Gamer Vision</h3>
-      <p>Gamers don’t settle for mediocrity and know how to spot quality. A well-designed game understands its audience and meets cultural and linguistic expectations. I bring the gamer insight your localization needs to succeed.</p>
-    </li>
-    <li>
-      <h3>Glossary Creation</h3>
-      <p>I create glossaries and termbases from scratch to streamline your game’s localization and minimize errors.</p>
-    </li>
-    <li>
-      <h3>Adaptation and CATs</h3>
-      <p>I work with MemoQ, Memsource (PhraseSkype SmartCat, and many more.</p>
-    </li>
-  </ul>
   <!--
   <div>
     <button data-sort><TextSlider content="Sort" /></button>
@@ -63,21 +43,13 @@ const { artistsTotal } = Astro.props;
 </header>
 
 <Separator />
-<Search />
+<!-- <Search /> -->
 
 <style>
   section {
     display: grid;
     gap: 1rem;
     max-width: var(--col-size-l);
-  }
-  
-  .services-grid {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    position: relative;
-    gap: 1rem;
   }
 
   .pills {
@@ -89,11 +61,13 @@ const { artistsTotal } = Astro.props;
   }
   
   .pills li {
-    border: 2px solid;
+    border: .1px solid;
     width: auto;
-    padding: 0.5rem;
-    font-size: 1.5rem;
-    border-radius: 0.5rem;
+    padding: 0.5rem .85rem;
+    font-size: 1rem;
+    border-radius: 2rem;
+    font-weight: 400;
+    letter-spacing: .5px;
   }
   
   li {
