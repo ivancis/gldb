@@ -29,10 +29,14 @@ const { artist } = Astro.props;
     background-size: cover;
     background-position: 50% 0%;
     aspect-ratio: 1;
-    color: red;
+    color: var(--color-text);
+    display: flex;
   }
 
   h3 {
-    margin: 1rem;
+    background: rgba(255, 255, 255, .8);
+    padding: 1rem;
+    margin: 0 0 auto;
+    width: 100%;
   }
 </style>
