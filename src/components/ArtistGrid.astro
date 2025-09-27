@@ -4,6 +4,14 @@ import ArtistCard from "./ArtistCard.astro";
 import Tooltip from "./Tooltip.astro";
 import Separator from "../components/Separator.astro";
 
+import { Image } from 'astro:assets';
+
+import gamerGif from "/src/assets/images/gamer.gif";
+import devicesGif from "/src/assets/images/devices.gif";
+import portatilGif from "/src/assets/images/portatil.gif";
+import translatorGif from "/src/assets/images/translator.gif";
+import reciboGif from "/src/assets/images/recibo.gif";
+
 type Props = {
   artists: CollectionEntry<"artists">[];
 };
@@ -32,35 +40,35 @@ My journey has shown me that video games are one of the most intricate art forms
 <ul class="services-grid">
   <li>
     <span>
-      <img src="/src/assets/images/gamer.gif" alt="">
+      <Image src={gamerGif} alt="" width={64} height={64} />
       <h3>Gamer Vision</h3>
     </span>
     <p>Gamers don't settle for mediocrity—they recognize quality instantly. A well-designed game speaks to its audience and respects cultural and linguistic expectations. I bring the gamer's perspective your localization needs to truly succeed.</p>
   </li>
   <li>
     <span>
-      <img src="/src/assets/images/devices.gif" alt="">
+      <Image src={devicesGif} alt="" width={64} height={64} />
       <h3>PC, Consoles &amp; Mobile</h3>
     </span>
     <p>Years in the industry have given me a solid command of the terminology for every gaming platform.</p>
   </li>
   <li>
     <span>
-      <img src="/src/assets/images/portatil.gif" alt="">
+      <Image src={portatilGif} alt="" width={64} height={64} />
       <h3>Glossary Creation</h3>
     </span>
     <p>I create glossaries and termbases from scratch to streamline your game's localization and minimize errors.</p>
   </li>
   <li>
     <span>
-      <img src="/src/assets/images/translator.gif" alt="">
+      <Image src={translatorGif} alt="" width={64} height={64} />
       <h3>Adaptation</h3>
     </span>
     <p>If your game is already localized into ESES (Spanish for Spain), I can adapt it to ESLA (Spanish for Latin America) to effectively reach your Latin American audience.</p>
   </li>
   <li>
     <span>
-      <img src="/src/assets/images/recibo.gif" alt="">
+      <Image src={reciboGif} alt="" width={64} height={64} />
       <h3>CATs</h3>
     </span>
     <p>I work with MemoQ, Phrase, SmartCat, and many more.</p>
