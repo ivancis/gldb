@@ -11,68 +11,84 @@ type Props = {
 const { artists } = Astro.props;
 const grid = "artists";
 ---
-<p>I offer translation, localization, transcreation, editing, proofreading, and LQA services to help your games connect authentically with Spanish-speaking audiences and expand into new markets.</p>
-<h3>Recent projects</h3>
-<p>While much of my work is confidential due to non-disclosure agreements, I'm proud to showcase a few projects below where I've received credit.</p>
-
-<section class="artist-grid" id="grid" data-grid={grid}>
-  {artists.map((artist) => <ArtistCard artist={artist} />)}
-</section>
+<p>I've been localizing games across multiple platforms for over five years, and I've been a gamer since I could hold a controller.</p>
+<p>My journey has shown me that video games are one of the most intricate art forms of our time, which is why I'm deeply committed to <b>creating seamless experiences</b> for players worldwide, ensuring that every element of your game is <b>meticulously localized</b> to resonate with its audience.</p>
 
 <Separator />
 
+<h2>What I do</h2>
+
+<ul class="pills">
+  <li>Translation</li>
+  <li>Adaptation</li>
+  <li>Glossary Creation</li>
+  <li>Localization</li>
+  <li>Transcreation</li>
+  <li>Editing</li>
+  <li>Proofreading</li>
+  <li>LQA</li>
+</ul>
+
 <ul class="services-grid">
-  <li>
-    <span>
-      <img src="/src/assets/images/devices.gif" alt="">
-      <h3>PC, Consoles &amp; Mobile</h3>
-    </span>
-    <p>I offer translation, localization, transcreation, editing, proofreading, and LQA services to help your games connect authentically with Spanish-speaking audiences and expand into new markets.</p>
-  </li>
   <li>
     <span>
       <img src="/src/assets/images/gamer.gif" alt="">
       <h3>Gamer Vision</h3>
     </span>
-    <p>Gamers don’t settle for mediocrity and know how to spot quality. A well-designed game understands its audience and meets cultural and linguistic expectations. I bring the gamer insight your localization needs to succeed.</p>
+    <p>Gamers don't settle for mediocrity—they recognize quality instantly. A well-designed game speaks to its audience and respects cultural and linguistic expectations. I bring the gamer's perspective your localization needs to truly succeed.</p>
   </li>
   <li>
     <span>
-      <img src="/src/assets/images/script.gif" alt="">
+      <img src="/src/assets/images/devices.gif" alt="">
+      <h3>PC, Consoles &amp; Mobile</h3>
+    </span>
+    <p>Years in the industry have given me a solid command of the terminology for every gaming platform.</p>
+  </li>
+  <li>
+    <span>
+      <img src="/src/assets/images/portatil.gif" alt="">
       <h3>Glossary Creation</h3>
     </span>
-    <p>I create glossaries and termbases from scratch to streamline your game’s localization and minimize errors.</p>
+    <p>I create glossaries and termbases from scratch to streamline your game's localization and minimize errors.</p>
   </li>
   <li>
     <span>
       <img src="/src/assets/images/translator.gif" alt="">
-      <h3>Adaptation and CATs</h3>
+      <h3>Adaptation</h3>
     </span>
-    <p>I work with MemoQ, Memsource (PhraseSkype SmartCat, and many more.</p>
+    <p>If your game is already localized into ESES (Spanish for Spain), I can adapt it to ESLA (Spanish for Latin America) to effectively reach your Latin American audience.</p>
+  </li>
+  <li>
+    <span>
+      <img src="/src/assets/images/recibo.gif" alt="">
+      <h3>CATs</h3>
+    </span>
+    <p>I work with MemoQ, Phrase, SmartCat, and many more.</p>
   </li>
 </ul>
 
-<Tooltip grid={grid} />
+<Separator />
+
+<h2>Recent projects</h2>
+<p>While much of my work is confidential due to non-disclosure agreements, I'm proud to share a selection of <b>credited</b> projects below.</p>
+<section class="artist-grid" id="grid" data-grid={grid}>
+  {artists.map((artist) => <ArtistCard artist={artist} />)}
+</section>
+
+<!-- <Tooltip grid={grid} /> -->
 
 <style>
-  h3 {
-    margin: 2rem 0 0;
+  h2 {
+    margin: 0;
   }
+  
   section {
     position: relative;
     overflow: hidden;
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    max-width: 1200px;
-    margin: 2rem 0;
     gap: 1rem;
-    grid-template-columns: repeat(2, calc(100% / 1));
-    @media screen and (min-width: 30em) {
-      grid-template-columns: repeat(8, calc(100% / 3));
-    }
-    @media screen and (min-width: 50em) {
-      grid-template-columns: repeat(7, calc(100% / 4));
-    }
   }
   
   .services-grid {
@@ -104,7 +120,8 @@ const grid = "artists";
   }
 
   li p {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin: 0;
   }
 
   span {
@@ -113,6 +130,25 @@ const grid = "artists";
   }
 
   img {
-    width: 5rem;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    margin: 2em 0 1em;
+  }
+  
+  .pills li {
+    border: .1px solid var(--border-color-active);
+    width: auto;
+    padding: 0.5rem .85rem;
+    font-size: .85rem;
+    border-radius: 2rem;
+    font-weight: 400;
+    letter-spacing: .5px;
   }
 </style>

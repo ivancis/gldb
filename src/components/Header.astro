@@ -30,7 +30,8 @@ const activeRoute = routes[currentPath] || null;
         data-astro-prefetch><TextSlider content="Hola!" /></a> -->
   <p>
     Say "hola" on 
-    <a href="/" class="discord">Discord</a>
+    <a href="/" class="discord">Discord,</a>
+    <a href="/" class="teams">Teams</a>
       or
     <a href="/" class="email">send an email</a> 
   </p>
@@ -88,20 +89,21 @@ const activeRoute = routes[currentPath] || null;
     align-items: center;
     gap: .5em;
     flex-wrap: wrap;
-    @media screen and (max-width: 900px) {
-      margin: 0 auto 0 0;
-    }
   }
   a {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: auto;
+    text-decoration: underline;
   }
   .discord {
-    color: purple;
+    color: #5865F2;
+  }
+  .teams {
+    color: #464EB8;
   }
   .email {
+    color: #127CD6;
   }
   i {
     font-size: 1.5rem;

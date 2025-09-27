@@ -11,38 +11,26 @@ type Props = {
 const { artistsTotal } = Astro.props;
 ---
 
-<header class="title-header title-header--initial">
-  
-  <section>
-    <div class="bio">
-      <h2>I'm a translator specializing in game localization from English to Spanish.</h2>
-    </div>
-    <ul class="pills">
-      <li>Translation</li>
-      <li>Localization</li>
-      <li>Transcreation</li>
-      <li>Editing</li>
-      <li>Proofreading</li>
-      <li>LQA</li>
-    </ul>
-  </section>
-  <!--
-  <div>
-    <button data-sort><TextSlider content="Sort" /></button>
-    <button data-shuffle><TextSlider content="Shuffle" /></button>
-    <div>
-      <button data-search class="search"><TextSlider content="Search" /></button
-      >
-      <button data-clear class="clear hidden" aria-label="Clear search">
-        <Cross width={14} height={14} />
-      </button>
-    </div>
+<section class="title-header title-header--initial">
+  <div class="bio">
+    <h2>I'm a seasoned <em>EN<b>></b>ESLA</em> game translator with a lifelong passion for video games.</h2>
   </div>
-  <span><TextSlider content={artistsTotal} /></span>
-  -->
-</header>
-
-<Separator />
+</section>
+<!--
+<div>
+  <button data-sort><TextSlider content="Sort" /></button>
+  <button data-shuffle><TextSlider content="Shuffle" /></button>
+  <div>
+    <button data-search class="search"><TextSlider content="Search" /></button
+    >
+    <button data-clear class="clear hidden" aria-label="Clear search">
+      <Cross width={14} height={14} />
+    </button>
+  </div>
+</div>
+<span><TextSlider content={artistsTotal} /></span>
+-->
+<!-- <Separator /> -->
 <!-- <Search /> -->
 
 <style>
@@ -52,22 +40,8 @@ const { artistsTotal } = Astro.props;
     max-width: var(--col-size-l);
   }
 
-  .pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 0;
+  h2 {
     margin: 0;
-  }
-  
-  .pills li {
-    border: .1px solid var(--border-color-active);
-    width: auto;
-    padding: 0.5rem .85rem;
-    font-size: 1rem;
-    border-radius: 2rem;
-    font-weight: 400;
-    letter-spacing: .5px;
   }
   
   li {

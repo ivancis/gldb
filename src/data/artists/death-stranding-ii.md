@@ -1,5 +1,5 @@
 ---
-name: "Death Stranding 2"
+name: "Death Stranding 2: On the Beach"
 stage_name: "Titulo"
 genre: "Experimental R&B"
 image: 

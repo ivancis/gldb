@@ -13,7 +13,7 @@
   --color-text-alt: #6a6a6a;
   --color-faded: #c9c9c9;
   --color-bg: #fff;
-  --border-color: #000;
+  --border-color: #bababa;
   --border-color-active: #33cccc;
   --color-link: #33cccc;
   --color-link-hover: rgb(22, 0, 145);
@@ -46,7 +46,18 @@ body {
 
 @media screen and (min-width: 44em) {
   body {
-    padding: 4vw 8vw 1rem;
+    padding: 2vw 8vw 1rem;
+    animation: myAnimation;
+    animation-duration: .5s;
+  }
+}
+
+@keyframes myAnimation {
+  from {
+    padding: 5vw 8vw 1rem;
+  }
+  to {
+    padding: 2vw 8vw 1rem;
   }
 }
 

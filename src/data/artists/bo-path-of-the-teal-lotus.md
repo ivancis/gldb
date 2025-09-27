@@ -1,5 +1,5 @@
 ---
-name: "Rajiv Bhatia"
+name: "Bō: Path of the Teal Lotus"
 stage_name: "DJ Bolly"
 genre: "Fusion"
 image: 

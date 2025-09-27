@@ -1,5 +1,5 @@
 ---
-name: "Evelyn Harper"
+name: "Turnip Boy Robs a Bank"
 stage_name: "Echo Lume"
 genre: "Synthwave"
 image: 
