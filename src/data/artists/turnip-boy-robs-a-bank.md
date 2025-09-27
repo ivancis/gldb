@@ -3,7 +3,7 @@ name: "Turnip Boy Robs a Bank"
 stage_name: "Echo Lume"
 genre: "Synthwave"
 image: 
-    src: "/images/artists/echo_lume.webp"
+    src: "/images/artists/turnip.webp"
     alt: "Echo Lume performing under neon lights"
 ---
 

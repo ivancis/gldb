@@ -18,9 +18,9 @@ const { artist } = Astro.props;
   data-genre={artist.data.genre}
   data-astro-prefetch
   aria-label={artist.data.name}>
-  <span>
+  <h3>
     {artist.data.name}
-  </span>
+  </h3>
 </a>
 
 <style>
@@ -30,20 +30,9 @@ const { artist } = Astro.props;
     background-position: 50% 0%;
     aspect-ratio: 1;
     color: red;
-    flex: 0 1 auto;
-    min-width: 30ch;
-    border-radius: .5rem;
-    overflow: hidden;
-    font-size: 1.15rem;
-    font-weight: bold;
   }
 
-  span {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.7);
-    width: 100%;
+  h3 {
+    margin: 1rem;
   }
 </style>

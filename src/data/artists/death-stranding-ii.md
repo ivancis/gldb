@@ -3,7 +3,7 @@ name: "Death Stranding 2: On the Beach"
 stage_name: "Titulo"
 genre: "Experimental R&B"
 image: 
-    src: "/images/artists/deathStranding.webp"
+    src: "/images/artists/stranding.webp"
     alt: "Amarié with a bold and mysterious presence under dramatic lighting"
 ---
 

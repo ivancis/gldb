@@ -3,7 +3,7 @@ name: "SSCHiM"
 stage_name: "Echo Lume"
 genre: "Synthwave"
 image: 
-    src: "/images/artists/echo_lume.webp"
+    src: "/images/artists/sschim.webp"
     alt: "Echo Lume performing under neon lights"
 ---
 

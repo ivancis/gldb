@@ -3,7 +3,7 @@ name: "Atlas Fallen"
 stage_name: "Echo Lume"
 genre: "Synthwave"
 image: 
-    src: "/images/artists/echo_lume.webp"
+    src: "/images/artists/atlas.webp"
     alt: "Echo Lume performing under neon lights"
 ---
 

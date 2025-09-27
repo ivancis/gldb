@@ -15,6 +15,7 @@
   --color-bg: #fff;
   --border-color: #bababa;
   --border-color-active: #33cccc;
+  --border-color-none: rgba(0,0,0,0);
   --color-link: #33cccc;
   --color-link-hover: rgb(22, 0, 145);
   --color-placeholder: #f8f8f8;
