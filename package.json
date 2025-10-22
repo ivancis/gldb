@@ -7,6 +7,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "astro": "astro"
   },
   "dependencies": {
@@ -19,6 +21,7 @@
     "lenis": "^1.1.17"
   },
   "devDependencies": {
-    "@types/imagesloaded": "^4.1.6"
+    "@types/imagesloaded": "^4.1.6",
+    "prettier": "^3.6.2"
   }
 }

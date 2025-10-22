@@ -44,7 +44,8 @@ const handleSearchClearClick = () => {
 const handleSearchInput = (e) => {
   const searchTerm = e.target.value;
   filterGrid(searchTerm);
-  searchContent.innerHTML = searchTerm === '' ? searchContentOriginal : searchTerm;
+  searchContent.innerHTML =
+    searchTerm === '' ? searchContentOriginal : searchTerm;
   toggleClearButton(searchTerm);
   searchButton.classList.toggle('search--active', searchTerm !== '');
 };
@@ -164,4 +165,6 @@ const handlePageEvent = (type) => {
 
 // Listen for Astro's lifecycle events
 document.addEventListener('astro:page-load', () => handlePageEvent('load'));
-document.addEventListener('astro:before-swap', () => handlePageEvent('before-swap'));
+document.addEventListener('astro:before-swap', () =>
+  handlePageEvent('before-swap')
+);

@@ -8,16 +8,16 @@ class Tooltip {
     this.tooltip = document.querySelector('.tooltip');
     this.arrow = this.tooltip.querySelector('.tooltip__row--ra svg');
     this.OFFSET_X = 20; // Distance from cursor to left edge of tooltip
-    this.OFFSET_Y = 0;  // Distance from cursor to top edge of tooltip
+    this.OFFSET_Y = 0; // Distance from cursor to top edge of tooltip
     this.animationConfig = {
       // Configuration for the text animations (e.g., rows sliding in/out)
       texts: {
-        duration: 0.7, 
-        ease: 'expo', 
+        duration: 0.7,
+        ease: 'expo',
       },
       // Configuration for the tooltip's scaling animations
       tooltip: {
-        duration: 0.6, 
+        duration: 0.6,
         ease: 'power4.inOut',
       },
       // Delay before starting text animations when showing the tooltip
@@ -28,9 +28,9 @@ class Tooltip {
     // Animation directions for the rows
     this.rowAnimationDirections = {
       stagename: { in: { yPercent: -100 }, out: { yPercent: -100 } }, // In and out to/from the top
-      name: { in: { yPercent: 100 }, out: { yPercent: 100 } },        // In and out to/from the bottom
-      genre: { in: { yPercent: 100 }, out: { yPercent: 100 } },       // In and out to/from the bottom
-      arrow: { in: { yPercent: -100 }, out: { yPercent: -100 } },     // In and out to/from the top
+      name: { in: { yPercent: 100 }, out: { yPercent: 100 } }, // In and out to/from the bottom
+      genre: { in: { yPercent: 100 }, out: { yPercent: 100 } }, // In and out to/from the bottom
+      arrow: { in: { yPercent: -100 }, out: { yPercent: -100 } }, // In and out to/from the top
     };
     this.hoverTarget = null; // Tracks the currently hovered `.artist`
     this.isTooltipVisible = false; // Tracks tooltip visibility
@@ -48,7 +48,9 @@ class Tooltip {
     this.yTo = gsap.quickTo(this.tooltip, 'y', { duration: 0.6, ease: 'expo' });
 
     // Initialize row active states
-    this.tooltip.querySelectorAll('.tooltip__row').forEach(row => row.dataset.active = '0');
+    this.tooltip
+      .querySelectorAll('.tooltip__row')
+      .forEach((row) => (row.dataset.active = '0'));
 
     this.initializeEvents();
   }
@@ -57,7 +59,7 @@ class Tooltip {
     this.grid.addEventListener('mousemove', this.handleMouseMove);
     window.addEventListener('resize', this.handleResize);
 
-    [...this.artists].forEach(artist => {
+    [...this.artists].forEach((artist) => {
       artist.addEventListener('mouseenter', this.handleMouseEnter);
       artist.addEventListener('mouseleave', this.handleMouseLeave);
     });
@@ -97,7 +99,11 @@ class Tooltip {
     this.scaleDownTimeout = setTimeout(() => {
       if (!this.hoverTarget) {
         this.scaleDownTimeline = gsap.timeline();
-        this.updateTooltip({ stagename: '', name: '', genre: '' }, this.scaleDownTimeline, 'out');
+        this.updateTooltip(
+          { stagename: '', name: '', genre: '' },
+          this.scaleDownTimeline,
+          'out'
+        );
         this.scaleDownTimeline.to(
           this.tooltip,
           { ...this.animationConfig.tooltip, scale: 0 },
@@ -120,7 +126,11 @@ class Tooltip {
     const genre = this.hoverTarget.dataset.genre;
 
     const updateTimeline = gsap.timeline();
-    this.updateTooltip({ stagename: stageName, name, genre }, updateTimeline, this.isTooltipVisible ? 'none' : 'in');
+    this.updateTooltip(
+      { stagename: stageName, name, genre },
+      updateTimeline,
+      this.isTooltipVisible ? 'none' : 'in'
+    );
   };
 
   handleMouseLeave = () => {
@@ -142,7 +152,7 @@ class Tooltip {
     this.grid.addEventListener('mousemove', this.handleMouseMove);
     window.addEventListener('resize', this.handleResize);
 
-    [...this.artists].forEach(artist => {
+    [...this.artists].forEach((artist) => {
       artist.addEventListener('mouseenter', this.handleMouseEnter);
       artist.addEventListener('mouseleave', this.handleMouseLeave);
     });
@@ -151,7 +161,9 @@ class Tooltip {
   destroy() {
     if (this.arrowTimeline) this.arrowTimeline.kill();
     if (this.scaleDownTimeline) this.scaleDownTimeline.kill();
-    Object.values(this.rowTimelines).forEach(timeline => timeline && timeline.kill());
+    Object.values(this.rowTimelines).forEach(
+      (timeline) => timeline && timeline.kill()
+    );
 
     clearTimeout(this.scaleDownTimeout);
     clearTimeout(this.mouseLeaveTimeout);
@@ -159,10 +171,9 @@ class Tooltip {
     this.grid.removeEventListener('mousemove', this.handleMouseMove);
     window.removeEventListener('resize', this.handleResize);
 
-    [...this.artists].forEach(artist => {
+    [...this.artists].forEach((artist) => {
       artist.removeEventListener('mouseenter', this.handleMouseEnter);
       artist.removeEventListener('mouseleave', this.handleMouseLeave);
-
     });
   }
 
@@ -174,7 +185,10 @@ class Tooltip {
     });
 
     // Animate the arrow only when tooltip appears/disappears
-    if ((direction === 'in' && !this.isTooltipVisible) || (direction === 'out' && this.isTooltipVisible)) {
+    if (
+      (direction === 'in' && !this.isTooltipVisible) ||
+      (direction === 'out' && this.isTooltipVisible)
+    ) {
       this.animateArrow(timeline, direction);
     }
   }
@@ -194,8 +208,10 @@ class Tooltip {
 
     // Determine animation direction
     const rowField = rowSelector.replace('[data-field="', '').replace('"]', '');
-    const animationDirection = this.rowAnimationDirections[rowField] || this.rowAnimationDirections['name'];
-    
+    const animationDirection =
+      this.rowAnimationDirections[rowField] ||
+      this.rowAnimationDirections['name'];
+
     // Clone animation directions to prevent GSAP mutation
     const clonedOutDirection = { ...animationDirection.out };
     const clonedInDirection = { ...animationDirection.in };
@@ -212,50 +228,68 @@ class Tooltip {
       gsap.set(nextSlider, clonedInDirection); // Ensure the next slider is positioned off-screen for the next animation
 
       // Slide the current text out (tooltip appearing)
-      this.rowTimelines[rowSelector].to(currentSlider, {
-        ...this.animationConfig.texts,
-        ...clonedOutDirection, // Slide out to the correct direction
-      }, this.animationConfig.textsDelay);
+      this.rowTimelines[rowSelector].to(
+        currentSlider,
+        {
+          ...this.animationConfig.texts,
+          ...clonedOutDirection, // Slide out to the correct direction
+        },
+        this.animationConfig.textsDelay
+      );
 
       // Slide the next text in
       gsap.set(nextSlider, clonedInDirection); // Position off-screen
-      this.rowTimelines[rowSelector].to(nextSlider, {
-        ...this.animationConfig.texts,
-        yPercent: 0, // Slide into place
-        onStart: () => {
-          nextSlider.textContent = newValue; // Update content
+      this.rowTimelines[rowSelector].to(
+        nextSlider,
+        {
+          ...this.animationConfig.texts,
+          yPercent: 0, // Slide into place
+          onStart: () => {
+            nextSlider.textContent = newValue; // Update content
+          },
         },
-      }, this.animationConfig.textsDelay); // Start after delay
-    } 
-    else if (direction === 'none') {
+        this.animationConfig.textsDelay
+      ); // Start after delay
+    } else if (direction === 'none') {
       // Transition between images
       const transitionOutDirection = {
         stagename: { yPercent: 100 }, // Slide down for stagename
-        name: { yPercent: -100 },    // Slide up for name
-        genre: { yPercent: -100 },   // Slide up for genre
+        name: { yPercent: -100 }, // Slide up for name
+        genre: { yPercent: -100 }, // Slide up for genre
       }[rowField] || { yPercent: 0 };
 
-      this.rowTimelines[rowSelector].to(currentSlider, {
-        ...this.animationConfig.texts,
-        ...transitionOutDirection, // Correct "out" animation for transitions
-      }, 0);
+      this.rowTimelines[rowSelector].to(
+        currentSlider,
+        {
+          ...this.animationConfig.texts,
+          ...transitionOutDirection, // Correct "out" animation for transitions
+        },
+        0
+      );
 
       // Slide the next text in
       gsap.set(nextSlider, clonedInDirection); // Position off-screen
-      this.rowTimelines[rowSelector].to(nextSlider, {
-        ...this.animationConfig.texts,
-        yPercent: 0, // Slide into place
-        onStart: () => {
-          nextSlider.textContent = newValue; // Update content
+      this.rowTimelines[rowSelector].to(
+        nextSlider,
+        {
+          ...this.animationConfig.texts,
+          yPercent: 0, // Slide into place
+          onStart: () => {
+            nextSlider.textContent = newValue; // Update content
+          },
         },
-      }, 0); // Start simultaneously
-    } 
-    else if (direction === 'out') {
+        0
+      ); // Start simultaneously
+    } else if (direction === 'out') {
       // Tooltip disappearing
-      this.rowTimelines[rowSelector].to(currentSlider, {
-        ...clonedOutDirection, // Slide out to the correct direction
-        ...this.animationConfig.texts,
-      }, 0);
+      this.rowTimelines[rowSelector].to(
+        currentSlider,
+        {
+          ...clonedOutDirection, // Slide out to the correct direction
+          ...this.animationConfig.texts,
+        },
+        0
+      );
     }
 
     // Update active state for the row
@@ -279,17 +313,26 @@ class Tooltip {
     const animationDirection = this.rowAnimationDirections['arrow'];
 
     if (direction === 'in') {
-      this.arrowTimeline.fromTo(this.arrow, {
-        ...animationDirection.in,
-      }, {
-        ...this.animationConfig.texts,
-        yPercent: 0,
-      }, this.animationConfig.textsDelay);
+      this.arrowTimeline.fromTo(
+        this.arrow,
+        {
+          ...animationDirection.in,
+        },
+        {
+          ...this.animationConfig.texts,
+          yPercent: 0,
+        },
+        this.animationConfig.textsDelay
+      );
     } else if (direction === 'out') {
-      this.arrowTimeline.to(this.arrow, {
-        ...this.animationConfig.texts,
-        ...animationDirection.out,
-      }, 0);
+      this.arrowTimeline.to(
+        this.arrow,
+        {
+          ...this.animationConfig.texts,
+          ...animationDirection.out,
+        },
+        0
+      );
     }
 
     // Add arrow animation to the main timeline
@@ -313,4 +356,6 @@ const handlePageEvent = (type) => {
 
 // Listen for Astro's lifecycle events
 document.addEventListener('astro:page-load', () => handlePageEvent('load'));
-document.addEventListener('astro:before-swap', () => handlePageEvent('before-swap'));
+document.addEventListener('astro:before-swap', () =>
+  handlePageEvent('before-swap')
+);

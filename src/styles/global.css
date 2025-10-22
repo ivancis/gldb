@@ -16,7 +16,7 @@
   --border-color: #ccc;
   --border-color-alt: #6a6a6a;
   --border-color-active: #33cccc;
-  --border-color-none: rgba(0,0,0,0);
+  --border-color-none: rgba(0, 0, 0, 0);
   --color-link: #2aadad;
   --color-link-hover: rgb(22, 0, 145);
   --color-placeholder: #f8f8f8;
@@ -50,7 +50,7 @@ body {
   body {
     padding: 2vw 8vw 1rem;
     animation: myAnimation;
-    animation-duration: .5s;
+    animation-duration: 0.5s;
   }
 }
 
@@ -233,11 +233,14 @@ img {
   width: 100%;
 }
 
-.content table, th, td {
+.content table,
+th,
+td {
   border: 1px solid;
 }
 
-.content th, td {
+.content th,
+td {
   padding: 1rem;
 }
 
@@ -291,11 +294,11 @@ dd {
 }
 
 .discord {
-  color: #5865F2;
+  color: #5865f2;
 }
 .teams {
-  color: #464EB8;
+  color: #464eb8;
 }
 .email {
-  color: #127CD6;
+  color: #127cd6;
 }

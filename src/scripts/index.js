@@ -24,26 +24,27 @@ const animateHomepageElements = () => {
   // Hide the grid container before starting the animation.
   animationTimeline = gsap.set(gridContainer, { autoAlpha: 0 });
 
-  gsap.timeline({
-    defaults: {
-      duration: 1.4,
-      ease: 'power4',
-    },
-    onComplete: () => {
-      // Dispatch a custom event after all animations complete.
-      const event = new CustomEvent('gridRendered');
-      document.dispatchEvent(event);
-    },
-  })
-  .fromTo(
-    lines,
-    { transformOrigin: '0% 50%', scaleX: 0 },
-    { duration: 1.6, ease: 'power2', stagger: 0.9, scaleX: 1 }
-  )
-  .from(textSliders, { yPercent: 100, stagger: 0.1 }, 0.2)
-  .set(gridContainer, { autoAlpha: 1 }, '<+=1')
-  .from(gridItems, { yPercent: 100, stagger: 0.08 }, '<')
-  .from(gridItems, { ease: 'sine', autoAlpha: 0, stagger: 0.08 }, '<');
+  gsap
+    .timeline({
+      defaults: {
+        duration: 1.4,
+        ease: 'power4',
+      },
+      onComplete: () => {
+        // Dispatch a custom event after all animations complete.
+        const event = new CustomEvent('gridRendered');
+        document.dispatchEvent(event);
+      },
+    })
+    .fromTo(
+      lines,
+      { transformOrigin: '0% 50%', scaleX: 0 },
+      { duration: 1.6, ease: 'power2', stagger: 0.9, scaleX: 1 }
+    )
+    .from(textSliders, { yPercent: 100, stagger: 0.1 }, 0.2)
+    .set(gridContainer, { autoAlpha: 1 }, '<+=1')
+    .from(gridItems, { yPercent: 100, stagger: 0.08 }, '<')
+    .from(gridItems, { ease: 'sine', autoAlpha: 0, stagger: 0.08 }, '<');
 };
 
 // Clean up animations and DOM references to prevent memory leaks.
@@ -71,8 +72,13 @@ const init = () => {
   window.scrollTo(0, 0);
 
   // Wait for assets to load if a preloader is present.
-  if (hasPreloaderComponent && sessionStorage.getItem('preloadComplete') !== 'true') {
-    document.addEventListener('assetsLoaded', animateHomepageElements, { once: true });
+  if (
+    hasPreloaderComponent &&
+    sessionStorage.getItem('preloadComplete') !== 'true'
+  ) {
+    document.addEventListener('assetsLoaded', animateHomepageElements, {
+      once: true,
+    });
   } else {
     animateHomepageElements();
   }
