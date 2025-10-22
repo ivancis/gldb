@@ -89,7 +89,8 @@ const grid = "artists";
 
 <div class="content">
   <h2>Recent credited projects:</h2>
-  <p>While much of my work is confidential due to non-disclosure agreements, I'm proud to share a selection below.</p>
+  <p>While much of my work is confidential due to non-disclosure agreements,<br>
+    I'm proud to share a selection below:</p>
 </div>
 <section class="artist-grid" id="grid" data-grid={grid}>
   {artists.map((artist) => <ArtistCard artist={artist} />)}
@@ -106,6 +107,7 @@ const grid = "artists";
   section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
     margin: 2rem 0;
     position: relative;
     width: 100%;
@@ -127,7 +129,7 @@ const grid = "artists";
       gap: 1rem;
     }
     @media screen and (max-width: 600px) {
-      gap: 0rem;
+      gap: 2rem;
     }
   }
 

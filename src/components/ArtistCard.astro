@@ -28,15 +28,21 @@ const { artist } = Astro.props;
 
 <style>
   div {
-    padding: 0 2rem 0 0;
-    border: 1px solid var(--border-color);
-    margin: 1px;
+    width: 100%;
   }
   
   a {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 2rem;
+    padding: 0 2rem 0 0;
+    margin: 1px;
+    text-decoration: none;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    color: var(--color-text);
   }
 
   span {

@@ -60,12 +60,11 @@ const { Content } = await render(artist);
 <BaseLayout title={artist.data.name}>
   <section>
     <header class="title-header">
+      <a class="back" href="/">Exit</a>
       <h2>
-        <!-- {artist.data.stage_name} -->
         <span>{artist.data.name}</span>
       </h2>
       <div>
-        <a class="back" href="/">Exit</a>
         <a href={`/${previousArtist.id}`}>Previous</a>
         <span class="faded">/</span>
         <a href={`/${nextArtist.id}`}>Next</a>

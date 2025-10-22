@@ -9,22 +9,22 @@
 
 :root {
   font-size: 16px;
-  --color-text: #000;
-  --color-text-alt: #000;
+  --color-text: #1a1a1a;
+  --color-text-alt: #1a1a1a;
   --color-faded: #c9c9c9;
   --color-bg: #fff;
-  --border-color: #bababa;
+  --border-color: #ccc;
   --border-color-alt: #6a6a6a;
   --border-color-active: #33cccc;
   --border-color-none: rgba(0,0,0,0);
-  --color-link: #33cccc;
+  --color-link: #2aadad;
   --color-link-hover: rgb(22, 0, 145);
   --color-placeholder: #f8f8f8;
   --font-size-s: 1.25rem;
   --font-size-l: clamp(1.25rem, 3vw, 1.75rem);
   --font-size-xl: clamp(1.5rem, 5vw, 2.75rem);
-  --col-size-m: 500px;
-  --col-size-l: 1000px;
+  --col-size-m: 640px;
+  --col-size-l: 1200px;
 }
 
 body {
@@ -64,6 +64,7 @@ body {
 }
 
 h1 {
+  font-size: 5rem;
   letter-spacing: -0.01rem;
 }
 
