@@ -19,66 +19,78 @@ type Props = {
 const { artists } = Astro.props;
 const grid = "artists";
 ---
-<p>I've been localizing games across multiple platforms for over five years, and I've been a gamer since I could hold a controller.
-<br/>
-<br/>
-My journey has shown me that video games are one of the most intricate art forms of our time, which is why I'm deeply committed to <b>creating seamless experiences</b> for players worldwide, ensuring that every element of your game is <b>meticulously localized</b> to resonate with its audience.</p>
+
+
+<div class="content-wrapper">
+  <div class="content">
+    <p>I've been localizing games across multiple platforms for over five years, and I've been a gamer since I could hold a controller.
+    <br/>
+    <br/>
+    My journey has shown me that video games are one of the most intricate art forms of our time, which is why I'm deeply committed to <b>creating seamless experiences</b> for players worldwide, ensuring that every element of your game is <b>meticulously localized</b> to resonate with its audience.</p>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <h2>My services</h2>
+
+  <ul class="pills">
+    <li>Translation</li>
+    <li>Localization</li>
+    <li>Transcreation</li>
+    <li>Editing</li>
+    <li>Proofreading</li>
+    <li>LQA</li>
+  </ul>
+  
+  <ul class="services-grid">
+    <li>
+      <span>
+        <Image src={gamerGif} alt="" width={64} height={64} />
+        <h3>Gamer Vision</h3>
+      </span>
+      <p>Gamers don't settle for mediocrity—they recognize quality instantly. A well-designed game speaks to its audience and respects cultural and linguistic expectations. I bring the gamer's perspective your localization needs to truly succeed.</p>
+    </li>
+    <li>
+      <span>
+        <Image src={devicesGif} alt="" width={64} height={64} />
+        <h3>PC, Consoles &amp; Mobile</h3>
+      </span>
+      <p>Years in the industry have given me a solid command of the terminology for every gaming platform.</p>
+    </li>
+    <li>
+      <span>
+        <Image src={portatilGif} alt="" width={64} height={64} />
+        <h3>Glossary Creation</h3>
+      </span>
+      <p>I create glossaries and termbases from scratch to streamline your game's localization and minimize errors.</p>
+    </li>
+    <li>
+      <span>
+        <Image src={translatorGif} alt="" width={64} height={64} />
+        <h3>Adaptation</h3>
+      </span>
+      <p>If your game is already localized into ESES (Spanish for Spain), I can adapt it to ESLA (Spanish for Latin America) to effectively reach your Latin American audience.</p>
+    </li>
+    <li>
+      <span>
+        <Image src={reciboGif} alt="" width={64} height={64} />
+        <h3>CATs</h3>
+      </span>
+      <p>I work with MemoQ, Phrase, SmartCat, and many more.</p>
+    </li>
+  </ul>
+</div>
 
 <Separator />
 
-<h2>What I do:</h2>
 
-<ul class="pills">
-  <li>Translation</li>
-  <li>Localization</li>
-  <li>Transcreation</li>
-  <li>Editing</li>
-  <li>Proofreading</li>
-  <li>LQA</li>
-</ul>
-
-<ul class="services-grid">
-  <li>
-    <span>
-      <Image src={gamerGif} alt="" width={64} height={64} />
-      <h3>Gamer Vision</h3>
-    </span>
-    <p>Gamers don't settle for mediocrity—they recognize quality instantly. A well-designed game speaks to its audience and respects cultural and linguistic expectations. I bring the gamer's perspective your localization needs to truly succeed.</p>
-  </li>
-  <li>
-    <span>
-      <Image src={devicesGif} alt="" width={64} height={64} />
-      <h3>PC, Consoles &amp; Mobile</h3>
-    </span>
-    <p>Years in the industry have given me a solid command of the terminology for every gaming platform.</p>
-  </li>
-  <li>
-    <span>
-      <Image src={portatilGif} alt="" width={64} height={64} />
-      <h3>Glossary Creation</h3>
-    </span>
-    <p>I create glossaries and termbases from scratch to streamline your game's localization and minimize errors.</p>
-  </li>
-  <li>
-    <span>
-      <Image src={translatorGif} alt="" width={64} height={64} />
-      <h3>Adaptation</h3>
-    </span>
-    <p>If your game is already localized into ESES (Spanish for Spain), I can adapt it to ESLA (Spanish for Latin America) to effectively reach your Latin American audience.</p>
-  </li>
-  <li>
-    <span>
-      <Image src={reciboGif} alt="" width={64} height={64} />
-      <h3>CATs</h3>
-    </span>
-    <p>I work with MemoQ, Phrase, SmartCat, and many more.</p>
-  </li>
-</ul>
-
-<Separator />
-
-<h2>Recent projects:</h2>
-<p>While much of my work is confidential due to non-disclosure agreements, I'm proud to share a selection of <b>credited</b> projects below.</p>
+<div class="content">
+  <h2>Recent credited projects:</h2>
+  <p>While much of my work is confidential due to non-disclosure agreements, I'm proud to share a selection below.</p>
+</div>
 <section class="artist-grid" id="grid" data-grid={grid}>
   {artists.map((artist) => <ArtistCard artist={artist} />)}
 </section>
@@ -97,7 +109,6 @@ My journey has shown me that video games are one of the most intricate art forms
     margin: 2rem 0;
     position: relative;
     width: 100%;
-    gap: 1rem;
   }
   
   .services-grid {
@@ -106,7 +117,7 @@ My journey has shown me that video games are one of the most intricate art forms
     margin: 2rem 0;
     padding: 0;
     position: relative;
-    gap: 1rem 3rem;
+    gap: 2rem 3rem;
     break-inside: avoid;
     margin-bottom: 10px;
     @media screen and (max-width: 1600px) {
@@ -127,7 +138,7 @@ My journey has shown me that video games are one of the most intricate art forms
   }
 
   li p {
-    font-size: 1rem;
+    font-size: var(--font-size-s);
     margin: 0;
   }
 
@@ -139,21 +150,21 @@ My journey has shown me that video games are one of the most intricate art forms
   img {
     width: 4rem;
     height: 4rem;
+    filter: grayscale(1);
   }
 
   .pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: .875rem;
     padding: 0;
     margin: 2em 0 1em;
   }
   
   .pills li {
-    border: .1px solid var(--border-color-active);
+    border: 2px solid var(--border-color);
     width: auto;
     padding: 0.5rem .85rem;
-    font-size: .85rem;
     border-radius: 2rem;
     font-weight: 400;
     letter-spacing: .5px;

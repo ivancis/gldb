@@ -3,6 +3,7 @@ import TextSlider from "../components/TextSlider.astro";
 import Separator from "../components/Separator.astro";
 import Search from "../components/Search.astro";
 import Cross from "../assets/images/cross.svg";
+import Header from "../components/Header.astro";
 
 type Props = {
   artistsTotal: number;
@@ -10,6 +11,8 @@ type Props = {
 
 const { artistsTotal } = Astro.props;
 ---
+
+<Header />
 
 <section class="title-header title-header--initial">
   <div class="bio">
@@ -42,6 +45,10 @@ const { artistsTotal } = Astro.props;
 
   h2 {
     margin: 0;
+  }
+
+  em {
+    font-style: normal;
   }
   
   li {

@@ -61,19 +61,16 @@ const { Content } = await render(artist);
   <section>
     <header class="title-header">
       <h2>
-        Case study:
-        {artist.data.stage_name}
-        <span class="faded">({artist.data.name})</span>
+        <!-- {artist.data.stage_name} -->
+        <span>{artist.data.name}</span>
       </h2>
       <div>
-        <a class="back" href="/">View all</a>
-        <span class="faded">/</span>
+        <a class="back" href="/">Exit</a>
         <a href={`/${previousArtist.id}`}>Previous</a>
         <span class="faded">/</span>
         <a href={`/${nextArtist.id}`}>Next</a>
       </div>
     </header>
-    <Separator />
     <div class="content-wrap">
       <img
         class="image fade-in"
@@ -96,6 +93,7 @@ const { Content } = await render(artist);
         )
       }
     </div>
+    <Separator />
   </section>
 </BaseLayout>
 <style>

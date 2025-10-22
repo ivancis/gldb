@@ -9,34 +9,46 @@ const { artist } = Astro.props;
 ---
 
 <!-- href={`/${artist.id}`} -->
-<a
-  href={`/${artist.id}`}
-  class="artist"
-  style={`--image: url('${artist.data.image.src}');`}
-  data-stagename={artist.data.stage_name}
-  data-name={artist.data.name}
-  data-genre={artist.data.genre}
-  data-astro-prefetch
-  aria-label={artist.data.name}>
-  <h3>
-    {artist.data.name}
-  </h3>
-</a>
+<div>
+  <a
+    href={`/${artist.id}`}
+    class="artist"
+    data-stagename={artist.data.stage_name}
+    data-name={artist.data.name}
+    data-genre={artist.data.genre}
+    data-astro-prefetch
+    aria-label={artist.data.name}
+  >
+    <span style={`--image: url('${artist.data.image.src}');`}></span>
+    <h3>
+      {artist.data.name}
+    </h3>
+  </a>
+</div>
 
 <style>
+  div {
+    padding: 0 2rem 0 0;
+    border: 1px solid var(--border-color);
+    margin: 1px;
+  }
+  
   a {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+  }
+
+  span {
+    width: 10rem;
+    height: 10rem;
     background-image: var(--image);
     background-size: cover;
     background-position: 50% 0%;
     aspect-ratio: 1;
-    color: var(--color-text);
-    display: flex;
   }
 
   h3 {
-    background: rgba(255, 255, 255, .8);
-    padding: 1rem;
-    margin: 0 0 auto;
-    width: 100%;
+    margin: auto 0;
   }
 </style>

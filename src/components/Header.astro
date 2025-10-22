@@ -20,7 +20,8 @@ const activeRoute = routes[currentPath] || null;
   <h1>
     <a href="/" class={activeRoute === "Home" ? "current" : ""}>
       <h1>
-        <TextSlider content="Hola, I'm Gonzalo" />
+        <!-- <TextSlider content="Hola, I'm Gonzalo" /> -->
+        Hola, I'm Gonzalo
       </h1>
     </a>
   </h1>
@@ -29,7 +30,7 @@ const activeRoute = routes[currentPath] || null;
         class={activeRoute === "Contact" ? "current" : ""}
         data-astro-prefetch><TextSlider content="Hola!" /></a> -->
   <p>
-    Say "hola" on 
+    Find me on 
     <a href="/" class="discord">Discord,</a>
     <a href="/" class="teams">Teams</a>
       or
@@ -96,15 +97,6 @@ const activeRoute = routes[currentPath] || null;
     justify-content: center;
     text-decoration: underline;
     font-weight: bold;
-  }
-  .discord {
-    color: #5865F2;
-  }
-  .teams {
-    color: #464EB8;
-  }
-  .email {
-    color: #127CD6;
   }
   i {
     font-size: 1.5rem;
