@@ -52,6 +52,11 @@ const { artist } = Astro.props;
     background-size: cover;
     background-position: 50% 0%;
     aspect-ratio: 1;
+
+    @media screen and (max-width: 600px) {
+      width: 5rem;
+    height: 5rem;
+    }
   }
 
   h3 {

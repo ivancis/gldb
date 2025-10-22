@@ -111,6 +111,17 @@ const grid = "artists";
     margin: 2rem 0;
     position: relative;
     width: 100%;
+
+    @media screen and (max-width: 1500px) {
+      background-color: orange;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (max-width: 1000px) {
+      grid-template-columns: 1fr;
+    }
+    @media screen and (max-width: 600px) {
+      background-color: gold;
+    }
   }
   
   .services-grid {
@@ -122,7 +133,7 @@ const grid = "artists";
     gap: 2rem 3rem;
     break-inside: avoid;
     margin-bottom: 10px;
-    @media screen and (max-width: 1600px) {
+    @media screen and (max-width: 1500px) {
       justify-content: space-between;
     }
     @media screen and (max-width: 1000px) {
