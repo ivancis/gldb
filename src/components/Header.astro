@@ -29,12 +29,10 @@ const activeRoute = routes[currentPath] || null;
         href="/contact/"
         class={activeRoute === "Contact" ? "current" : ""}
         data-astro-prefetch><TextSlider content="Hola!" /></a> -->
-  <p>
-    Find me on 
-    <a href="/" class="discord">Discord,</a>
-    <a href="/" class="teams">Teams</a>
+  <p>I appreciate you visiting :) Happy to connect on <a href="https://www.linkedin.com/in/game-localization-gld/" class="linkedin">LinkedIn,</a><a href="https://tr.ee/bzc3MqmbLp" class="discord">Discord,</a>
+    <a href="msteams://teams.microsoft.com/l/chat/0/0?users=topoide@hotmail.com" class="teams">Teams</a>
       or
-    <a href="/" class="email">send an email</a> 
+    <a href="mailto:diazgonzaloluis@gmail.com" class="email">send an email</a>
   </p>
   <!-- <span><TextSlider content="Gameloc Specialist" /></span> -->
   <!--
@@ -74,9 +72,6 @@ const activeRoute = routes[currentPath] || null;
     flex-wrap: wrap;
     gap: 1rem;
   }
-  header a.current {
-    pointer-events: none;
-  }
   h1 {
     margin: 0 auto 0 0;
   }
@@ -87,12 +82,5 @@ const activeRoute = routes[currentPath] || null;
     align-items: center;
     gap: .35em;
     flex-wrap: wrap;
-  }
-  i {
-    font-size: 1.5rem;
-  }
-
-  h5 {
-    margin: auto;
   }
 </style>

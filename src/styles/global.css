@@ -38,6 +38,7 @@ body {
   line-height: 1;
   font-family: 'Instrument Sans Variable', serif;
   font-variant-ligatures: none;
+  animation: entrance 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -50,16 +51,18 @@ body {
 @media screen and (min-width: 44em) {
   body {
     padding: 2vw 8vw 1rem;
-    animation: myAnimation;
-    animation-duration: 0.5s;
   }
 }
 
-@keyframes myAnimation {
+@keyframes entrance {
   from {
+    opacity: 0;
+    transform: translateY(2rem);
     padding: 5vw 8vw 1rem;
   }
   to {
+    opacity: 1;
+    transform: translateY(0);
     padding: 2vw 8vw 1rem;
   }
 }
@@ -299,6 +302,9 @@ dd {
 }
 .teams {
   color: #464eb8;
+}
+.linkedin {
+  color: #0e76a8;
 }
 .email {
   color: #127cd6;
