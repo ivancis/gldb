@@ -34,6 +34,10 @@ const grid = "artists";
   <br>
   <br>
 
+  <div class="parallax">
+    <p>hello</p>
+  </div>
+
   <h2>My services</h2>
 
   <ul class="pills">
@@ -62,7 +66,7 @@ const grid = "artists";
     </li>
     <li>
       <span>
-        <Image src={portatilGif} alt="" width={64} height={64} />
+        <Image src={portatilGif} alt="" width={64} height={64} class="shrink" />
         <h3>Glossary Creation</h3>
       </span>
       <p>I create glossaries and termbases from scratch to streamline your game's localization and minimize errors.</p>
@@ -99,6 +103,23 @@ const grid = "artists";
 <!-- <Tooltip grid={grid} /> -->
 
 <style>
+
+  .parallax{
+    position: fixed;
+    padding: 2vw 8vw 1rem;
+    top: 2vw;
+    right: 8vw;
+    display: flex;
+    margin: auto;
+    border:  16px dashed salmon;
+    width: 50vh;
+    height: 50vh;
+  }
+
+  .parallax > * {
+    margin: auto;
+  }
+
   h2 {
     margin: 0;
     color: var(--color-text-alt);
@@ -146,22 +167,31 @@ const grid = "artists";
     width: 100%;
     max-width: var(--col-size-m);
     list-style-type: none;
+    display: grid;
+    grid-template-rows: auto 1fr;
   }
 
   li p {
     font-size: var(--font-size-s);
-    margin: 0;
   }
 
   span {
     display: flex;
-    gap: 1rem;
+    gap: .5rem;
   }
 
   img {
-    width: 4rem;
-    height: 4rem;
-    filter: grayscale(1);
+    width: 64px;
+    height: 64px;
+    filter: var(--filter);
+  }
+
+  .shrink {
+    height: 60px;
+  }
+
+  h3 {
+    margin: auto 0;
   }
 
   .pills {
@@ -173,11 +203,14 @@ const grid = "artists";
   }
   
   .pills li {
-    border: 2px solid var(--border-color);
+    color: var(--border-color-alt);
+    border: 2px solid currentColor;
+    border-bottom: 3px solid currentColor;
+    font-weight: bold;
+    letter-spacing: 0.5px;
     width: auto;
     padding: 0.5rem .85rem;
     border-radius: 2rem;
-    font-weight: 400;
     letter-spacing: .5px;
   }
 </style>
