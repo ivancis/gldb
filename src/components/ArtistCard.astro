@@ -47,7 +47,9 @@ const { artist } = Astro.props;
     overflow: hidden;
     width: 100%;
     color: var(--color);
-    transition: transform 0.1s var(--transition), box-shadow 0.1s var(--transition);
+    transition: transform 0.1s var(--transition),
+                border 0.1s var(--transition),
+                box-shadow 0.1s var(--transition);
   }
 
   a:hover, a:focus {
