@@ -1,6 +1,6 @@
 ---
 name: 'Atlas Fallen'
-stage_name: 'Echo Lume'
+stage_name: 'https://store.steampowered.com/app/1230530/Atlas_Fallen_Reign_Of_Sand/'
 genre: 'Synthwave'
 image:
   src: '/images/artists/atlas.webp'

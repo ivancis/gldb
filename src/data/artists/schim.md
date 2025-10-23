@@ -1,6 +1,6 @@
 ---
 name: 'SCHiM'
-stage_name: 'Echo Lume'
+stage_name: 'https://store.steampowered.com/app/1519710/SCHiM/'
 genre: 'Synthwave'
 image:
   src: '/images/artists/schim.webp'

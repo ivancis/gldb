@@ -1,6 +1,6 @@
 ---
 name: 'Bō: Path of the Teal Lotus'
-stage_name: 'DJ Bolly'
+stage_name: 'https://store.steampowered.com/app/1614440/B_Path_of_the_Teal_Lotus/'
 genre: 'Fusion'
 image:
   src: '/images/artists/bo.webp'

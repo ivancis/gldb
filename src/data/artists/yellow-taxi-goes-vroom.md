@@ -1,6 +1,6 @@
 ---
 name: 'Yellow Taxi Goes Vroom'
-stage_name: 'Echo Lume'
+stage_name: 'https://store.steampowered.com/app/2011780/Yellow_Taxi_Goes_Vroom/'
 genre: 'Synthwave'
 image:
   src: '/images/artists/yellowtaxi.webp'

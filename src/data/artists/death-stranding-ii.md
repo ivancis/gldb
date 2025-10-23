@@ -1,6 +1,6 @@
 ---
 name: 'Death Stranding 2: On the Beach'
-stage_name: 'Titulo'
+stage_name: 'https://www.playstation.com/es-ar/games/death-stranding-2-on-the-beach/?emcid=pa-co-520666&gad_campaignid=22642134129'
 genre: 'Experimental R&B'
 image:
   src: '/images/artists/stranding.webp'

@@ -1,6 +1,6 @@
 ---
 name: 'Turnip Boy Robs a Bank'
-stage_name: 'Echo Lume'
+stage_name: 'https://store.steampowered.com/app/2097230/Turnip_Boy_Robs_a_Bank/'
 genre: 'Synthwave'
 image:
   src: '/images/artists/turnip.webp'

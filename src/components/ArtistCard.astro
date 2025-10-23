@@ -9,14 +9,15 @@ const { artist } = Astro.props;
 ---
 
 <!-- href={`/${artist.id}`} -->
+<!-- data-astro-prefetch -->
 <div>
   <a
-    href={`/${artist.id}`}
+    href={artist.data.stage_name}
+    target="_blank"
     class="artist"
     data-stagename={artist.data.stage_name}
     data-name={artist.data.name}
     data-genre={artist.data.genre}
-    data-astro-prefetch
     aria-label={artist.data.name}
   >
     <span style={`--image: url('${artist.data.image.src}');`}></span>
